@@ -31,7 +31,7 @@ const projects = [
 
 export default function Quests() {
   return (
-    <div className="bg-black text-gray-200 font-pixel px-4 py-8 flex flex-col items-center">
+    <div id="Quests" className="text-gray-200 font-pixel px-4 py-8 flex flex-col items-center" style={{ backgroundColor: '#28282B' }}>
       <h2 className="text-3xl pixel-border mb-6">Quêtes (projets)</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl">

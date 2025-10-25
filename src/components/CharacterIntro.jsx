@@ -3,7 +3,11 @@ import character from '../assets/rayan-character.png';
 
 export default function CharacterIntro() {
   return (
-    <div className="bg-black text-gray-200 font-pixel px-4 py-8 flex flex-col items-center">
+    <div
+      id="CharacterIntro"
+      className="text-gray-200 font-pixel px-4 py-8 flex flex-col items-center"
+      style={{ backgroundColor: '#28282B' }}
+    >
       <h2 className="text-3xl pixel-border mb-4">Sélection du personnage</h2>
 
       <div className="flex flex-col md:flex-row items-center gap-8">
@@ -18,7 +22,7 @@ export default function CharacterIntro() {
 
           <div className="text-beige space-y-4">
             <div>
-              <p className="text-red-500 font-bold">Développement Web</p>
+              <p className="font-bold">Développement Web</p>
               <ul className="list-none ml-4">
                 <li>• <span className="text-yellow-400">Front :</span> ReactJS, VueJS, TailwindCSS</li>
                 <li>• <span className="text-yellow-400">Back :</span> NodeJS, PHP, SQL/NoSQL, Supabase, Prisma, Express, WebSocket, Python</li>
@@ -26,7 +30,7 @@ export default function CharacterIntro() {
             </div>
 
             <div>
-              <p className="text-red-500 font-bold">Data Science</p>
+              <p className="font-bold">Data Science</p>
               <ul className="list-none ml-4">
                 <li>• Python : Pandas, Matplotlib, Scikit-learn, Streamlit</li>
                 <li>• Modélisation, nettoyage, traitement, interprétation de données</li>
@@ -34,14 +38,14 @@ export default function CharacterIntro() {
             </div>
 
             <div>
-              <p className="text-red-500 font-bold">Outils & Environnement</p>
+              <p className="font-bold">Outils & Environnement</p>
               <ul className="list-none ml-4">
                 <li>• Git, Bash, PowerBI</li>
               </ul>
             </div>
 
             <div>
-              <p className="text-red-500 font-bold">Expérience</p>
+              <p className="font-bold">Expérience</p>
               <ul className="list-none ml-4">
                 <li>
                   • Développeur full stack chez <strong>e-petitpas</strong> :
