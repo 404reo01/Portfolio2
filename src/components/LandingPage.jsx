@@ -1,6 +1,5 @@
 import React from 'react';
 import moon from '../assets/moon.jpg';
-import bgVideo from '../assets/bg.mp4'; 
 import bg2 from '../assets/bg2.mp4';
 
 // Fonction de gestion du clic
