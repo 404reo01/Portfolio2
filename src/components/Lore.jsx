@@ -21,7 +21,9 @@ const quests = [
 
 export default function Lore() {
   return (
-    <div className=" text-white font-pixel px-4 py-8 flex flex-col items-center" style={{ backgroundColor: '#28282B' }}>
+    <div className=" text-white font-pixel px-4 py-8 flex flex-col items-center" style={{
+      backgroundColor: 'transparent'
+    }}>
       <h2 className="text-3xl pixel-border  mb-6">Lore et parcours du personnage</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">

@@ -1,0 +1,50 @@
+.dialog-box {
+  position: relative;
+  background-color: #28282b;
+  border: 2px solid #f5f5dc;
+  border-radius: 8px;
+  padding: 10px 15px;
+  max-width: 250px;
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+  color: #f5f5dc;
+  font-size: 14px;
+  line-height: 1.4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dialog-content {
+  white-space: pre-wrap;
+}
+
+.cursor {
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.dialog-tail {
+  position: absolute;
+  bottom: -10px;
+  right: 20px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #28282b;
+}
+
+.dialog-tail::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid #f5f5dc;
+}

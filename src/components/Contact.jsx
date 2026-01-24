@@ -2,7 +2,9 @@ import React from 'react';
 
 export default function Contact() {
   return (
-    <div id="Contact" className=" text-gray-200 font-pixel px-4 py-12 flex flex-col items-center" style={{ backgroundColor: '#28282B' }} >
+    <div id="Contact" className=" text-gray-200 font-pixel px-4 py-12 flex flex-col items-center" style={{
+      backgroundColor: 'transparent'
+    }} >
       <h2 className="text-3xl pixel-border mb-6">Contact</h2>
 
       <div className="pixel-border p-6 max-w-xl w-full text-beige text-center space-y-4">
