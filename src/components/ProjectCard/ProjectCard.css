@@ -1,5 +1,5 @@
 .project-card {
-  background-color: #28282b;
+  background-color: #202025;
   border: 2px solid #f5f5dc;
   border-radius: 8px;
   padding: 20px;
@@ -32,7 +32,7 @@
 
 .pixel-button {
   background-color: #f5f5dc;
-  color: #28282b;
+  color: #202025;
   border: 2px solid #f5f5dc;
   padding: 8px 16px;
   font-family: 'Courier New', monospace;

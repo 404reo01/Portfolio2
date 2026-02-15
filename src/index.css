@@ -3,7 +3,7 @@
 
 /* Ensure consistent background across the entire page */
 html, body {
-  background-color: #28282B !important;
+  background-color: #19191f !important;
   min-height: 100vh;
   margin: 0;
   padding: 0;
@@ -24,7 +24,7 @@ html, body {
 }
 
 .pixel-button {
-  background-color: #1a1a1a;
+  background-color: #202025;
   border: 2px solid #444;
   color: #f5f5dc;
   padding: 0.5rem 1rem;
@@ -40,7 +40,7 @@ html, body {
   border-color: #f5f5dc;
 }
 .quest-card {
-  background-color: #28282B;
+  background-color: #202025;
   border: 4px solid #f5f5dc;
   box-shadow: 0 0 0 4px #1a1a1a, 0 0 8px #f5f5dc;
   padding: 1rem;
