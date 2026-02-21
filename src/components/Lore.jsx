@@ -28,7 +28,7 @@ export default function Lore() {
     <div className="text-white font-pixel px-4 py-12 flex flex-col items-center bg-transparent">
       {/* Header avec effet de texte clignotant type terminal */}
       <h2 className="text-3xl mb-10 text-center tracking-widest uppercase">
-        <span className="animate-pulse mr-2">&gt;</span>
+        
         Lore et parcours
       </h2>
 
