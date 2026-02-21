@@ -1,94 +1,112 @@
 import React from 'react';
 
-const quests = [
-  {
-    title: 'BUT 1 GEII',
-    status: 'COMPLETED',
-    description: 'Electronique et systèmes embarqués. Les bases du hardware.',
-  },
-  {
-    title: 'Licence Éco-Gestion',
-    status: 'COMPLETED',
-    description: 'Parcours langues renforcées (anglais, coréen). Vision business.',
-  },
-  {
-    title: 'BUT Passerelle TI',
-    status: 'COMPLETED',
-    description: "Transition vers l'informatique et la data science.",
-  },
-  {
-    title: 'BUT 3 Informatique',
-    status: 'IN PROGRESS',
-    description: "Développement d'applications web et data science.",
-  },
+const loreFiles = [
+  { id: '01', title: 'BUT 1 GEII', desc: 'Hardware & Systèmes embarqués.', rotation: 'rotate-y-12 rotate-x-6', pos: 'md:-translate-x-20' },
+  { id: '02', title: 'Licence Éco-Gestion', desc: 'Business, parcours langue renforcée anglais, coréen.', rotation: '-rotate-y-12 -rotate-x-6', pos: 'md:translate-x-16' },
+  { id: '03', title: 'BUT Passerelle TI', desc: 'Transition Informatique & Data.', rotation: 'rotate-y-6 rotate-x-12', pos: 'md:-translate-x-10' },
+  { id: '04', title: 'BUT 3 Informatique', desc: 'Full-stack & Ingénierie.', rotation: '-rotate-y-12 rotate-x-3', pos: 'md:translate-x-24' }
 ];
+
 
 export default function Lore() {
   return (
-    <div className="text-white font-pixel px-4 py-12 flex flex-col items-center bg-transparent">
-      {/* Header avec effet de texte clignotant type terminal */}
-      <h2 className="text-3xl mb-10 text-center tracking-widest uppercase">
-        
-        Lore et parcours
+    <div id="Lore" className="min-h-screen py-32 px-6 font-pixel relative flex flex-col items-center bg-transparent overflow-hidden" style={{ perspective: '2000px' }}>
+      
+      {/* Titre avec lueur holographique */}
+      <h2 className="text-3xl md:text-5xl text-[#f5f5dc] mb-32 uppercase tracking-[0.5em] drop-shadow-[0_0_20px_rgba(245,245,220,0.4)] opacity-90">
+        Parcours
       </h2>
 
-      {/* Le Moniteur CRT */}
-      <div className="relative w-full max-w-5xl bg-[#c0c0c0] p-4 md:p-8 rounded-lg border-t-[6px] border-l-[6px] border-[#e0e0e0] border-b-[6px] border-r-[6px] border-[#808080] shadow-[10px_10px_0px_0px_rgba(0,0,0,0.3)]">
+      <div className="relative w-full max-w-5xl flex flex-col items-center gap-24">
         
-        {/* L'écran interne (La dalle) */}
-        <div className="bg-[#1a1a1a] rounded-sm p-4 md:p-8 border-4 border-[#3a3a3a] relative overflow-hidden ring-offset-4 ring-offset-[#c0c0c0] ring-2 ring-[#808080]">
-          
-          {/* Effet Scanlines (Les lignes de l'écran rétro) */}
-          <div className="absolute inset-0 pointer-events-none opacity-10 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] z-10 bg-[length:100%_2px,3px_100%]"></div>
+        {/* Le Chemin brisé (Style Vectoriel) */}
+        <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20" style={{ transform: 'translateZ(-100px)' }}>
+          <path 
+            d="M 400 0 L 450 150 L 300 300 L 500 450 L 400 650" 
+            fill="none" 
+            stroke="#f5f5dc" 
+            strokeWidth="1.5" 
+            strokeDasharray="12 6"
+          />
+        </svg>
 
-          {/* Grille des dossiers/quêtes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 relative z-20">
-            {quests.map((quest, index) => (
-              <div 
-                key={index} 
-                className="group relative bg-[#2a2a2a] border-2 border-[#4a4a4a] p-4 hover:border-beige-500 transition-colors"
-              >
-                {/* Barre de titre de la "fenêtre" */}
-                <div className="flex justify-between items-center mb-3 border-b border-[#4a4a4a] pb-2">
-                  <span className="text-[10px] text-gray-500">QUEST_0{index + 1}.EXE</span>
-                  <div className={`text-[10px] px-2 py-0.5 rounded-sm ${quest.status === 'COMPLETED' ? 'bg-green-900 text-green-400' : 'bg-blue-900 text-blue-400 animate-pulse'}`}>
-                    {quest.status}
-                  </div>
-                </div>
+        {loreFiles.map((file, index) => (
+          <div 
+            key={file.id}
+            className={`relative transition-all duration-700 ease-out group ${file.pos} ${file.rotation}`}
+            style={{ transformStyle: 'preserve-3d' }}
+          >
+            {/* LA DALLE DE VERRE 3D */}
+            <div className="
+              relative w-full max-w-md p-10 
+              bg-white/5 backdrop-blur-[25px] 
+              border border-white/20 
+              shadow-[20px_20px_50px_rgba(0,0,0,0.5)]
+              group-hover:border-white/50 group-hover:bg-white/10
+              transition-all duration-500
+            "
+            style={{ 
+              transform: 'translateZ(50px)',
+              boxShadow: 'inset 0 0 20px rgba(255,255,255,0.05)' 
+            }}>
+              
+              {/* Reflet de brillance sur le verre */}
+              <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
 
-                <h3 className="text-lg text-[#d1d1b1] mb-2 uppercase tracking-tighter">
-                  {quest.title}
-                </h3>
-                
-                <p className="text-sm text-gray-400 mb-4 leading-relaxed">
-                  {quest.description}
-                </p>
-
-                
+              {/* Badge d'index flottant (Effet 3D décalé) */}
+              <div className="absolute -top-6 -left-6 bg-[#f5f5dc] text-black px-4 py-1 text-[12px] font-bold shadow-[6px_6px_0px_rgba(0,0,0,0.3)] transform translate-z-10">
+                LOG_0{index + 1}
               </div>
-            ))}
-          </div>
 
-          {/* Footer de l'écran */}
-          <div className="mt-8 pt-4 border-t border-[#3a3a3a] text-center text-[12px] text-green-500 opacity-70">
-            [ SYSTEM OK  ]
-          </div>
-        </div>
+              <h3 className="text-2xl text-[#f5f5dc] mb-4 uppercase tracking-widest drop-shadow-md">
+                {file.title}
+              </h3>
+              
+              <p className="text-lg text-gray-200/80 font-sans italic leading-relaxed">
+                "{file.desc}"
+              </p>
 
-        {/* Bouton de mise sous tension du moniteur (Décoratif) */}
-        <div className="absolute -bottom-6 right-10 flex gap-4">
-            <div className="w-8 h-2 bg-[#808080] rounded-full border-b-2 border-white"></div>
-            <div className="w-3 h-3 bg-green-500 rounded-full shadow-[0_0_5px_green]"></div>
+              {/* HUD Décoration */}
+              <div className="absolute top-2 right-2 flex gap-1">
+                <div className="w-1 h-1 bg-white/20"></div>
+                <div className="w-1 h-1 bg-white/40"></div>
+              </div>
+              <div className="absolute bottom-4 right-4 w-6 h-6 border-b-2 border-r-2 border-[#f5f5dc]/20"></div>
+            </div>
+
+            {/* Ombre portée flottante */}
+            <div className="absolute inset-0 bg-black/40 blur-3xl -z-10 translate-y-12 translate-z-[-20px] scale-90 opacity-50"></div>
+          </div>
+        ))}
+      </div>
+
+      {/* Bio de fin - Plaque de verre centrée */}
+      <div className="mt-48 relative max-w-3xl transform hover:scale-105 transition-transform duration-700" style={{ transformStyle: 'preserve-3d' }}>
+        <div className="absolute inset-0 bg-[#f5f5dc]/5 blur-[80px]"></div>
+        <div className="relative bg-white/5 border border-white/10 backdrop-blur-[40px] p-12 text-center shadow-2xl">
+          <p className="text-[#f5f5dc]/90 font-sans text-xl italic leading-relaxed">
+            Passionné par l'informatique, Rayan aime également les jeux vidéo, les mangas et le sport. 
+            On pourrait en parler des heures, mais tenons-nous en à l'essentiel !
+          </p>
+          <div className="mt-6 text-[10px] uppercase tracking-[0.8em] text-[#f5f5dc]/30">End_Transmission</div>
         </div>
       </div>
 
-      {/* Description de bas de page */}
-      <div className="mt-16 bg-[#e0e0d0] text-black border-4 border-black p-6 max-w-3xl text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <p className="leading-relaxed">
-          Passionné par l'informatique, Rayan aime également les jeux vidéo (stratégie & aventure), les mangas et le sport. 
-          De par son affinité avec ces domaines, on pourrait en parler des heures, mais tenons-nous en à l'essentiel !
-        </p>
-      </div>
+      <style jsx>{`
+        .rotate-y-12 { transform: rotateY(12deg) rotateX(2deg); }
+        .rotate-x-6 { transform: rotateX(6deg) rotateY(2deg); }
+        .-rotate-y-12 { transform: rotateY(-12deg) rotateX(-2deg); }
+        .-rotate-x-6 { transform: rotateX(-6deg) rotateY(-2deg); }
+        .rotate-y-6 { transform: rotateY(6deg) rotateZ(1deg); }
+        .rotate-x-12 { transform: rotateX(12deg); }
+        .rotate-x-3 { transform: rotateX(3deg) rotateY(-5deg); }
+        
+        @media (max-width: 768px) {
+          .md\:-translate-x-20, .md\:translate-x-16, .md\:-translate-x-10, .md\:translate-x-24 {
+            transform: none !important;
+          }
+        }
+      `}</style>
     </div>
   );
 }

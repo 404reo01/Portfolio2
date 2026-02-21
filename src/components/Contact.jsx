@@ -31,7 +31,7 @@ export default function Contact() {
             >
               <div className="absolute inset-0 bg-red-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               <div className="relative z-10 flex flex-col items-center gap-2">
-                <span className="text-[10px] text-red-500 font-bold uppercase tracking-widest">Send Transmission</span>
+                <span className="text-[10px] text-[#f5f5dc] font-bold uppercase tracking-widest">Send Transmission</span>
                 <span className="text-xs md:text-sm text-[#f5f5dc] break-all">rayan.el.ouazzani01@gmail.com</span>
               </div>
             </a>
@@ -45,7 +45,7 @@ export default function Contact() {
             >
               <div className="absolute inset-0 bg-blue-500/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
               <div className="relative z-10 flex flex-col items-center gap-2">
-                <span className="text-[10px] text-blue-500 font-bold uppercase tracking-widest">Connect Network</span>
+                <span className="text-[10px] text-[#f5f5dc] font-bold uppercase tracking-widest">Connect Network</span>
                 <span className="text-xs md:text-sm text-[#f5f5dc]">LinkedIn Profile</span>
               </div>
             </a>

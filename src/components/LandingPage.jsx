@@ -44,7 +44,6 @@ export default function LandingPage() {
         }
       `}</style>
 
-      {/* On a enlevé le background ici pour laisser celui de App.jsx */}
       <div className="relative min-h-screen flex items-center justify-center font-pixel px-4 text-gray-200 overflow-hidden bg-transparent">
         
         {/* COUCHE 3 : Étoiles filantes (Toujours là pour l'effet de profondeur) */}
@@ -62,17 +61,43 @@ export default function LandingPage() {
             Bienvenue sur mon portfolio.
           </p>
 
-          <div className="flex flex-wrap justify-center gap-4 mt-6">
-            <button onClick={() => scrollToSection('Quests')} className="pixel-button">
-              Projets
-            </button>
-            <button onClick={() => scrollToSection('CharacterIntro')} className="pixel-button">
-              Compétences
-            </button>
-            <button onClick={() => scrollToSection('Contact')} className="pixel-button">
-              Contact
-            </button>
-          </div>
+          <div className="flex flex-wrap justify-center gap-4 font-pixel">
+  {/* CARTE PROJETS */}
+  <button 
+    onClick={() => scrollToSection('Quests')} 
+    className="group relative w-44 h-16 bg-black/40 backdrop-blur-xl border border-[#f5f5dc]/20 transition-all duration-300 hover:border-[#f5f5dc]/50 flex items-center justify-center overflow-hidden"
+  >
+    <span className="relative z-10 text-[#f5f5dc] text-xs uppercase tracking-[0.2em]">
+      Projets
+    </span>
+    <div className="absolute inset-0 bg-[#f5f5dc]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="absolute top-0 right-0 w-1.5 h-1.5 border-t border-r border-[#f5f5dc]/40"></div>
+  </button>
+
+  {/* CARTE COMPÉTENCES */}
+  <button 
+    onClick={() => scrollToSection('CharacterIntro')} 
+    className="group relative w-44 h-16 bg-black/40 backdrop-blur-xl border border-[#f5f5dc]/20 transition-all duration-300 hover:border-[#f5f5dc]/50 flex items-center justify-center overflow-hidden"
+  >
+    <span className="relative z-10 text-[#f5f5dc] text-xs uppercase tracking-[0.2em]">
+      Compétences
+    </span>
+    <div className="absolute inset-0 bg-[#f5f5dc]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="absolute top-0 right-0 w-1.5 h-1.5 border-t border-r border-[#f5f5dc]/40"></div>
+  </button>
+
+  {/* CARTE CONTACT */}
+  <button 
+    onClick={() => scrollToSection('Contact')} 
+    className="group relative w-44 h-16 bg-black/40 backdrop-blur-xl border border-[#f5f5dc]/20 transition-all duration-300 hover:border-[#f5f5dc]/50 flex items-center justify-center overflow-hidden"
+  >
+    <span className="relative z-10 text-[#f5f5dc] text-xs uppercase tracking-[0.2em]">
+      Contact
+    </span>
+    <div className="absolute inset-0 bg-[#f5f5dc]/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+    <div className="absolute top-0 right-0 w-1.5 h-1.5 border-t border-r border-[#f5f5dc]/40"></div>
+  </button>
+</div>
         </div>
       </div>
     </>

@@ -28,7 +28,6 @@ const projects = [
     github: 'https://github.com/404reo01/bot-recherche-stage',
   },
 ];
-
 export default function Quests() {
   const [index, setIndex] = useState(0);
 
@@ -36,13 +35,13 @@ export default function Quests() {
   const prevProject = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
 
   return (
-    <div className="flex flex-col items-center justify-center py-20 px-4 overflow-hidden select-none bg-transparent">
-      <h2 className="text-4xl font-pixel text-[#f5f5dc] mb-16 uppercase tracking-[0.2em] border-b-4 border-[#f5f5dc] pb-4 text-center">
-        Mes projets 
+    <div className="flex flex-col items-center justify-center py-24 px-4 select-none bg-transparent">
+      <h2 className="text-4xl font-pixel text-[#f5f5dc] mb-20 uppercase tracking-[0.5em] text-center opacity-90">
+        Projets
       </h2>
 
-      {/* Container du Carrousel */}
-      <div className="relative w-full max-w-2xl h-[450px] flex items-center justify-center" style={{ perspective: '1200px' }}>
+      {/* Carrousel 3D avec effet Verre */}
+      <div className="relative w-full max-w-4xl h-[480px] flex items-center justify-center" style={{ perspective: '1200px' }}>
         <AnimatePresence mode="popLayout">
           {projects.map((project, i) => {
             const isCenter = i === index;
@@ -56,44 +55,55 @@ export default function Quests() {
                 key={i}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{
-                  opacity: isCenter ? 1 : 0.4,
-                  scale: isCenter ? 1.1 : 0.8,
-                  x: isLeft ? -200 : isRight ? 200 : 0,
-                  rotateY: isLeft ? 55 : isRight ? -55 : 0,
+                  opacity: isCenter ? 1 : 0.2,
+                  scale: isCenter ? 1 : 0.7,
+                  x: isLeft ? -280 : isRight ? 280 : 0,
+                  rotateY: isLeft ? 40 : isRight ? -40 : 0,
                   zIndex: isCenter ? 30 : 10,
                 }}
-                transition={{ type: 'spring', stiffness: 180, damping: 20 }}
-                className="absolute w-72 h-[400px] cursor-pointer"
+                transition={{ type: 'spring', stiffness: 120, damping: 20 }}
+                className="absolute w-72 h-[420px] cursor-pointer"
                 onClick={() => setIndex(i)}
               >
-                {/* La Cartouche */}
-                <div className="w-full h-full bg-[#f5f5dc] rounded-t-2xl border-x-[6px] border-t-[6px] border-black shadow-[15px_15px_0px_0px_rgba(0,0,0,0.4)] flex flex-col overflow-hidden">
+                {/* LA DALLE DE VERRE */}
+                <div className="
+                  relative w-full h-full 
+                  bg-white/5 backdrop-blur-2xl 
+                  rounded-xl border border-white/20 
+                  shadow-[0_8px_32px_0_rgba(0,0,0,0.8)]
+                  flex flex-col overflow-hidden
+                  group transition-all duration-500
+                  hover:border-white/40
+                ">
+                  {/* Reflet de brillance sur le verre */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent pointer-events-none"></div>
                   
-                  {/* ZONE HAUTE (Le titre hors cadre) */}
-                  <div className="w-full h-14 bg-[#d4d4aa] border-b-[4px] border-black flex flex-col items-center justify-center px-4 relative">
-                    <span className="text-[10px] font-pixel text-black/60 uppercase tracking-tighter mb-1">
-                      Rayan OS // 2026
-                    </span>
-                    <span className="text-[12px] font-pixel text-black uppercase font-bold text-center leading-none">
-                      {project.type}
-                    </span>
-                    {/* Petites encoches décoratives sur les côtés */}
-                    <div className="absolute left-2 w-1.5 h-6 bg-black/10 rounded-full" />
-                    <div className="absolute right-2 w-1.5 h-6 bg-black/10 rounded-full" />
-                  </div>
+                  {/* Bordure interne lumineuse (tranche du verre) */}
+                  <div className="absolute inset-0 border border-white/5 rounded-xl pointer-events-none shadow-[inset_0_0_15px_rgba(255,255,255,0.05)]"></div>
 
-                  {/* ZONE ÉTIQUETTE (Le cadre principal) */}
-                  <div className="flex-1 m-4 bg-[#202025] border-[4px] border-black flex flex-col items-center justify-center p-6 text-center shadow-inner">
-                    <h3 className="text-xl font-pixel text-[#f5f5dc] leading-tight uppercase tracking-normal">
-                      {project.title}
-                    </h3>
-                  </div>
-                  
-                  {/* ZONE BASSE (Grip tactile) */}
-                  <div className="h-12 bg-[#d4d4aa] border-t-[4px] border-black flex gap-1.5 px-4 items-center">
-                    {[...Array(8)].map((_, j) => (
-                      <div key={j} className="flex-1 h-6 bg-black/10 rounded-full" />
-                    ))}
+                  {/* Contenu de la carte */}
+                  <div className="relative z-10 flex flex-col h-full">
+                    {/* Header technique */}
+                    <div className="p-6 border-b border-white/10 bg-white/5">
+                      <div className="text-[9px] text-white/40 uppercase tracking-[0.3em] mb-1">Sector_Data</div>
+                      <div className="text-[11px] text-[#f5f5dc] font-pixel uppercase truncate">
+                        {project.type}
+                      </div>
+                    </div>
+
+                    {/* Titre central */}
+                    <div className="flex-1 flex items-center justify-center p-6 text-center">
+                      <h3 className="text-2xl font-pixel text-[#f5f5dc] leading-none uppercase tracking-tighter drop-shadow-md">
+                        {project.title}
+                      </h3>
+                    </div>
+
+                    {/* Footer Carte */}
+                    <div className="p-4 bg-black/20 flex justify-center gap-2">
+                       <div className="w-1 h-1 bg-[#f5f5dc]/50"></div>
+                       <div className="w-1 h-1 bg-[#f5f5dc]/30"></div>
+                       <div className="w-1 h-1 bg-[#f5f5dc]/10"></div>
+                    </div>
                   </div>
                 </div>
               </motion.div>
@@ -102,45 +112,39 @@ export default function Quests() {
         </AnimatePresence>
       </div>
 
-      {/* Panneau de détails */}
-      <div className="mt-12 w-full max-w-xl bg-[#202025] border-4 border-[#f5f5dc] p-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-        <div className="flex justify-between items-center mb-6">
-          <button 
-            onClick={prevProject} 
-            className="bg-[#f5f5dc] text-black px-4 py-2 font-pixel text-sm hover:bg-[#d4d4aa] active:translate-y-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all"
-          >
-            &lt; PREV
+      {/* Panneau de détails (L'écran de contrôle en verre) */}
+      <div className="mt-16 w-full max-w-2xl 
+        bg-black/60 backdrop-blur-[30px] 
+        border border-white/10 p-10 
+        shadow-[0_0_100px_rgba(0,0,0,0.5)] 
+        rounded-2xl relative"
+      >
+        {/* Lueur d'ambiance derrière le verre */}
+        <div className="absolute -inset-1 bg-[#f5f5dc]/5 blur-2xl rounded-2xl -z-10"></div>
+
+        <div className="flex justify-between items-center mb-10">
+          <button onClick={prevProject} className="text-[#f5f5dc]/60 hover:text-[#f5f5dc] transition-colors font-pixel text-[15px] uppercase tracking-widest border-b border-[#f5f5dc]/20 pb-1">
+            Précédent
           </button>
-          <span className="font-pixel text-xs text-[#f5f5dc] opacity-60">ID: 0{index + 1}</span>
-          <button 
-            onClick={nextProject} 
-            className="bg-[#f5f5dc] text-black px-4 py-2 font-pixel text-sm hover:bg-[#d4d4aa] active:translate-y-1 shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all"
-          >
-            NEXT &gt;
+          <span className="font-pixel text-[10px] text-[#f5f5dc]/30">LOG_{index + 1}</span>
+          <button onClick={nextProject} className="text-[#f5f5dc]/60 hover:text-[#f5f5dc] transition-colors font-pixel text-[15px] uppercase tracking-widest border-b border-[#f5f5dc]/20 pb-1">
+            Suivant
           </button>
         </div>
 
-        <p className="text-base font-pixel text-[#f5f5dc] mb-8 leading-relaxed min-h-[80px] text-center">
-          {projects[index].description}
+        <p className="text-xl font-sans italic text-[#f5f5dc]/80 mb-12 leading-relaxed text-center">
+          "{projects[index].description}"
         </p>
 
-        <div className="flex flex-col sm:flex-row gap-4">
-          <a
-            href={projects[index].github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 text-center py-3 border-2 border-[#f5f5dc] text-[#f5f5dc] font-pixel text-sm hover:bg-[#f5f5dc] hover:text-[#202025] transition-all"
-          >
-            [ VIEW_CODE ]
+        <div className="flex gap-8">
+          <a href={projects[index].github} target="_blank" rel="noopener noreferrer" 
+             className="flex-1 py-4 border border-white/10 bg-white/5 hover:bg-white/10 text-[#f5f5dc]/60 hover:text-[#f5f5dc] text-center font-pixel text-[15px] uppercase tracking-[0.3em] transition-all">
+            [ SRC_CODE ]
           </a>
           {projects[index].live && (
-            <a
-              href={projects[index].live}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-1 text-center py-3 bg-[#f5f5dc] text-[#202025] font-pixel text-sm hover:bg-[#d4d4aa] transition-all shadow-[5px_5px_0px_0px_rgba(0,0,0,0.5)]"
-            >
-              START_GAME
+            <a href={projects[index].live} target="_blank" rel="noopener noreferrer" 
+               className="flex-1 py-4 bg-[#f5f5dc]/10 border border-[#f5f5dc]/30 hover:bg-[#f5f5dc]/20 text-[#f5f5dc] text-center font-pixel text-[15px] uppercase tracking-[0.3em] transition-all shadow-[0_0_30px_rgba(245,245,220,0.1)]">
+              EXECUTE_SYS
             </a>
           )}
         </div>
