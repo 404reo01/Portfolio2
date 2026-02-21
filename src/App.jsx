@@ -9,7 +9,7 @@ import Avatar from './components/Avatar/Avatar';
 import PhysicsEngine from './utils/physics/PhysicsEngine';
 import StarCursor from './components/StarCursor';
 import Sidequests from './components/Sidequests';
-
+import bgImage from './assets/bg.jpg'; 
 function App() {
   // On initialise toutes les refs, y compris pour Lore et Sidequests
   const accueilRef = useRef(null);
@@ -22,7 +22,10 @@ function App() {
   const isCheatActivated = useCheatCode();
 
   return (
-    <div className="relative">
+    <div 
+      className="relative min-h-screen bg-cover bg-center bg-fixed"
+      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bgImage})` }}
+    >
       <StarCursor />
       
       <div ref={accueilRef}>

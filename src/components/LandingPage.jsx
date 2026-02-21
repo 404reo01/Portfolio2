@@ -1,6 +1,4 @@
 import React from 'react';
-// Import de l'image de fond
-import bgImage from '../assets/bg.jpg'; 
 
 const scrollToSection = (id) => {
   const element = document.getElementById(id);
@@ -38,37 +36,23 @@ export default function LandingPage() {
   return (
     <>
       <style>{`
-        
-        
-
         /* Etoiles filantes */
         @keyframes shoot {
-          0% { transform: translateX(0) translateY(0) scale(1); opacity: 50; }
-          10% { opacity: 100; }
-          100% { transform: translateX(100px) translateY(200px) scale(1.5); opacity: 50; }
+          0% { transform: translateX(0) translateY(0) scale(1); opacity: 0.5; }
+          10% { opacity: 1; }
+          100% { transform: translateX(100px) translateY(200px) scale(1.5); opacity: 0; }
         }
       `}</style>
 
-      <div className="relative min-h-screen flex items-center justify-center font-pixel px-4 text-gray-200 overflow-hidden">
+      {/* On a enlevé le background ici pour laisser celui de App.jsx */}
+      <div className="relative min-h-screen flex items-center justify-center font-pixel px-4 text-gray-200 overflow-hidden bg-transparent">
         
-        {/* COUCHE 1 : L'image de fond (tout en bas) */}
-        <div 
-          className="absolute inset-0 z-0"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-          }}
-        ></div>
-
-     
-        {/* COUCHE 3 : Étoiles filantes */}
+        {/* COUCHE 3 : Étoiles filantes (Toujours là pour l'effet de profondeur) */}
         <div className="absolute inset-0 pointer-events-none z-[3]">
           {generateStars()}
         </div>
 
-        {/* COUCHE 4 : Contenu textuel (au premier plan) */}
+        {/* COUCHE 4 : Contenu textuel */}
         <div className="relative z-20 flex flex-col items-center justify-center text-center">
           <h1 className="text-3xl md:text-5xl pixel-border text-amber-100 mb-6 bg-black/50 px-6 py-3 rounded-lg backdrop-blur-sm shadow-2xl">
             Rayan EL OUAZZANI
