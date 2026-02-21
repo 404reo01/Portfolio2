@@ -24,7 +24,7 @@ export default function CharacterIntro() {
 
         <div className="pixel-border p-4 w-full max-w-xl">
           <p className="text-lg text-beige mb-2">
-            <strong>Étudiant en 3e année de BUT Informatique</strong>
+            <strong>Étudiant en 3e année de BUT Informatique / Président du bureau des étudiants</strong>
           </p>
 
           <h3 className="text-xl text-beige mb-2">COMPÉTENCES</h3>
