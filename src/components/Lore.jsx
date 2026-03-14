@@ -80,17 +80,7 @@ export default function Lore() {
         ))}
       </div>
 
-      {/* Bio de fin - Plaque de verre centrée */}
-      <div className="mt-48 relative max-w-3xl transform hover:scale-105 transition-transform duration-700" style={{ transformStyle: 'preserve-3d' }}>
-        <div className="absolute inset-0 bg-[#f5f5dc]/5 blur-[80px]"></div>
-        <div className="relative bg-white/5 border border-white/10 backdrop-blur-[40px] p-12 text-center shadow-2xl">
-          <p className="text-[#f5f5dc]/90 font-sans text-xl italic leading-relaxed">
-            Passionné par l'informatique, Rayan aime également les jeux vidéo, les mangas et le sport. 
-            On pourrait en parler des heures, mais tenons-nous en à l'essentiel !
-          </p>
-          <div className="mt-6 text-[10px] uppercase tracking-[0.8em] text-[#f5f5dc]/30">End_Transmission</div>
-        </div>
-      </div>
+      
 
       <style jsx>{`
         .rotate-y-12 { transform: rotateY(12deg) rotateX(2deg); }

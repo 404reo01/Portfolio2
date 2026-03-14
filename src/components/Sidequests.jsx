@@ -5,7 +5,7 @@ const sideQuests = [
   {
     id: 'tech',
     title: 'Tech',
-    content: 'En plus du développement, j’aime tout ce qui se rapporte à la tech.',
+    content: 'En plus du développement, j’aime tout ce qui se rapporte à la tech. J’ai participé à des évenements tels que la nuit de l’info et fais plusieurs salons tech comme Vivatech.',
     spotifyUrl: 'https://open.spotify.com/embed/track/1fLEbwf9nT9yY5IjNtLYgy?utm_source=generator" width="100%" height="352',
   },
   {
