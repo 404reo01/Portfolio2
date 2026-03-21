@@ -57,7 +57,7 @@ export default function Quests() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center py-24 px-4 select-none bg-transparent">
+    <div id="Quests" className="flex flex-col items-center justify-center py-24 px-4 select-none bg-transparent">
       <SectionHeader
         title="Projets"
         titleClassName="text-4xl font-pixel tracking-[0.5em] text-center opacity-90 mb-20"
@@ -175,10 +175,9 @@ export default function Quests() {
 
       {/* Panneau de détails */}
       <GlassCard
-        variant="strong"
-        className="mt-16 w-full max-w-2xl p-10 shadow-[0_0_100px_rgba(0,0,0,0.5)] rounded-2xl"
+        variant="dark"
+        className="mt-16 w-full max-w-2xl p-10 rounded-2xl"
       >
-        <div className="absolute -inset-1 bg-[#f5f5dc]/5 blur-2xl rounded-2xl -z-10" />
 
         {/* Navigation desktop + dots */}
         <div className="flex justify-between items-center mb-10">

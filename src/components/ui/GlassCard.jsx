@@ -10,12 +10,12 @@ import React from 'react';
  */
 
 const VARIANTS = {
-  // bg-white/5 — verre clair (Quests carousel, Lore)
-  light:  'bg-white/5 backdrop-blur-2xl border border-white/20',
-  // bg-black/40 — verre foncé (Sidequests contenu)
-  dark:   'bg-black/40 backdrop-blur-[40px] border border-white/10',
-  // bg-black/60 — verre très opaque (Quests panneau détail)
-  strong: 'bg-black/60 backdrop-blur-[30px] border border-white/10',
+  // Verre clair — Quests carousel, Lore
+  light:  'bg-black/35 backdrop-blur-2xl border border-white/15',
+  // Verre foncé — Sidequests contenu
+  dark:   'bg-black/55 backdrop-blur-[40px] border border-white/10',
+  // Verre très opaque — Quests panneau détail
+  strong: 'bg-black/72 backdrop-blur-[30px] border border-white/10',
 };
 
 export default function GlassCard({

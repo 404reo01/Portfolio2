@@ -45,7 +45,7 @@ export default function Achievement({ accueilRef, experiencesRef, loreRef, proje
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
           transition={{ type: 'spring', stiffness: 200, damping: 22 }}
-          className="fixed bottom-20 left-1/2 -translate-x-1/2 z-[900]
+          className="fixed top-20 left-1/2 -translate-x-1/2 z-[900]
                      pointer-events-none select-none"
         >
           <div

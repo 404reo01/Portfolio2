@@ -61,8 +61,8 @@ function ChapterCard({ roman, year, title, subtitle, description, tags, active, 
                   border transition-all duration-300
                   min-h-[260px] md:min-h-[310px]
                   ${active
-                    ? 'border-[#f5f5dc]/25 bg-black/40'
-                    : 'border-[#f5f5dc]/10 bg-black/20 opacity-80 hover:opacity-100'
+                    ? 'border-[#f5f5dc]/25 bg-black/58'
+                    : 'border-[#f5f5dc]/10 bg-black/42 opacity-80 hover:opacity-100'
                   }`}
     >
       <HudCorners

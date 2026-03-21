@@ -33,13 +33,13 @@ const sideQuests = [
   },
 ];
 
-export default function Journal() {
+export default function Sidequests() {
   const [activeTab, setActiveTab] = useState(sideQuests[0]);
 
   return (
     <div id="Sidequests" className="flex flex-col items-center py-24 px-4 font-pixel select-none bg-transparent">
       <SectionHeader
-        title="Side_Quests"
+        title="Centres d'intérêts"
         titleClassName="text-3xl tracking-[0.5em] opacity-80 text-center mb-16"
       />
 
@@ -149,7 +149,7 @@ export default function Journal() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.35 }}
-            className="w-full rounded-xl overflow-hidden shadow-2xl border border-white/10"
+            className="w-full rounded-xl overflow-hidden border border-white/8"
           >
             <iframe
               src={activeTab.spotifyUrl}

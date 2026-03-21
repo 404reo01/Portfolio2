@@ -43,7 +43,7 @@ export default function Contact() {
         <div className="absolute -inset-2 bg-[#f5f5dc]/5 blur-3xl rounded-3xl -z-10" />
 
         {/* Carte principale */}
-        <div className="relative bg-black/60 backdrop-blur-md border border-[#f5f5dc]/20 p-8 md:p-12 overflow-hidden">
+        <div className="relative bg-black/72 backdrop-blur-md border border-[#f5f5dc]/20 p-8 md:p-12 overflow-hidden">
           <HudCorners color="border-[#f5f5dc]/35" thickness={2} />
 
           {/* Scan balayage */}

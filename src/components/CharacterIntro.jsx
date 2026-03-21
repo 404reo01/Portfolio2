@@ -50,9 +50,9 @@ function XPCard({ status, pulse, company, role, stack, description, delay }) {
       viewport={{ once: true }}
       transition={{ delay, duration: 0.45 }}
       whileHover={{ y: -3, transition: { duration: 0.2 } }}
-      className="relative flex flex-col gap-5 border border-[#f5f5dc]/20 bg-black/30
+      className="relative flex flex-col gap-5 border border-[#f5f5dc]/20 bg-black/50
                  p-6 cursor-default group transition-colors duration-300
-                 hover:border-[#f5f5dc]/35 hover:bg-black/40 h-full"
+                 hover:border-[#f5f5dc]/35 hover:bg-black/60 h-full"
     >
       <HudCorners
         size="sm"
@@ -94,7 +94,7 @@ function SkillCard({ label, tags, delay }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.35 }}
-      className="border border-[#f5f5dc]/15 bg-black/20 p-5 flex flex-col gap-4"
+      className="border border-[#f5f5dc]/15 bg-black/45 p-5 flex flex-col gap-4"
     >
       <span className="text-xs tracking-[0.35em] uppercase text-[#f5f5dc]/45">{label}</span>
       <div className="flex flex-wrap gap-2">
@@ -129,7 +129,7 @@ export default function CharacterIntro() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
           className="relative lg:w-64 shrink-0 flex flex-row lg:flex-col items-center
-                     border border-[#f5f5dc]/20 bg-black/30 px-7 py-8 gap-6 lg:gap-0"
+                     border border-[#f5f5dc]/20 bg-black/50 px-7 py-8 gap-6 lg:gap-0"
         >
           <HudCorners color="border-[#f5f5dc]/35" />
 

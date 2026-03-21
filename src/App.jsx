@@ -12,7 +12,7 @@ import StarCursor from './components/StarCursor';
 import Sidequests from './components/Sidequests';
 import Terminal from './components/Terminal';
 import Achievement from './components/Achievement';
-import bgImage from './assets/bg.jpg';
+import TopographicBackground from './components/TopographicBackground';
 
 function App() {
   const accueilRef     = useRef(null);
@@ -25,10 +25,8 @@ function App() {
   const [isPhysicsActive, setIsPhysicsActive] = useState(false);
 
   return (
-    <div
-      className="relative min-h-screen bg-cover bg-center bg-fixed"
-      style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bgImage})` }}
-    >
+    <div className="relative min-h-screen" style={{ backgroundColor: '#0e0c09' }}>
+      <TopographicBackground />
       <Navbar />
       <StarCursor />
 
