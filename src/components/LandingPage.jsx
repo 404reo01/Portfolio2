@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HudCorners, PulsingDot } from './ui';
-
-const TECH_BADGES = ['React', 'Node.js', 'Next.js', 'NestJS', 'Supabase'];
+import IconCloud from './IconCloud';
 
 const TYPEWRITER_TEXT = 'Développeur Full Stack · BUT Informatique 3e année';
 
@@ -152,26 +151,15 @@ export default function LandingPage() {
           )}
         </AnimatePresence>
 
-        {/* Badges techno */}
+        {/* Icon Cloud techno */}
         <AnimatePresence>
           {showTech && (
             <motion.div
-              className="flex flex-wrap justify-center gap-2"
-              initial={{ opacity: 0, y: 6 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0, scale: 0.92 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, ease: 'easeOut' }}
             >
-              {TECH_BADGES.map((tech, i) => (
-                <motion.span
-                  key={tech}
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: i * 0.07 }}
-                  className="text-[9px] md:text-[11px] px-3 py-1 border border-[#f5f5dc]/15 text-[#f5f5dc]/50 tracking-[0.15em] uppercase bg-black/20"
-                >
-                  {tech}
-                </motion.span>
-              ))}
+              <IconCloud size={200} />
             </motion.div>
           )}
         </AnimatePresence>
