@@ -66,6 +66,67 @@ html, body {
   line-height: 1.6;
 }
 
+/* Hero : étoiles filantes */
+@keyframes shoot {
+  0%   { transform: translateX(0) translateY(0) scale(1); opacity: 0.6; }
+  10%  { opacity: 1; }
+  100% { transform: translateX(var(--dx, 80px)) translateY(var(--dy, 160px)) scale(1.5); opacity: 0; }
+}
+
+/* Hero : curseur clignotant ligne HUD */
+@keyframes blink-cursor {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink-cursor 1s step-end infinite;
+}
+
+/* Hero : badge alternance pulsé */
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+.badge-pulse {
+  animation: pulse-badge 2s ease-in-out infinite;
+}
+
+/* Hero : overlay scanlines CRT */
+.hero-scanlines {
+  position: relative;
+}
+.hero-scanlines::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.06) 2px,
+    rgba(0, 0, 0, 0.06) 4px
+  );
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Scroll offset global pour la navbar fixe (h-14 = 56px) */
+[id] {
+  scroll-margin-top: 56px;
+}
+
+/* Contact : scan balayage */
+@keyframes scan {
+  from { transform: translateY(-100%); }
+  to   { transform: translateY(200%);  }
+}
+
+.contact-scan {
+  animation: scan 5s linear infinite;
+}
+
 /* Glitch effect for retro gaming aesthetic */
 @keyframes glitch {
   0% {

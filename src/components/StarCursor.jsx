@@ -50,10 +50,11 @@ export default function StarCursor() {
       {/* Toggle button */}
       <button
         onClick={() => setIsEnabled(!isEnabled)}
-        className="fixed top-4 right-4 z-50 pixel-button text-xs"
+        className="fixed bottom-6 left-4 z-[600] font-pixel text-[11px] tracking-[0.18em] uppercase text-[#f5f5dc]/70 hover:text-[#f5f5dc] transition-colors duration-300 flex items-center gap-2 select-none border border-[#f5f5dc]/20 hover:border-[#f5f5dc]/50 px-3 py-2 bg-black/50 backdrop-blur-sm"
         title={isEnabled ? "Désactiver la traînée d'étoiles" : "Activer la traînée d'étoiles"}
       >
-        {isEnabled ? "✨ OFF" : "✨ ON"}
+        <span className="text-[14px] leading-none">{isEnabled ? '★' : '☆'}</span>
+        <span>trail</span>
       </button>
 
       {/* Particles */}

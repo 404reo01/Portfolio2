@@ -1,33 +1,37 @@
-import React, { useRef } from 'react';
-import { useCheatCode } from './hooks/useCheatCode';
+import React, { useRef, useState } from 'react';
+import Navbar from './components/Navbar';
 import LandingPage from './components/LandingPage';
 import CharacterIntro from './components/CharacterIntro';
 import Lore from './components/Lore';
 import Quests from './components/Quests';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 import Avatar from './components/Avatar/Avatar';
 import PhysicsEngine from './utils/physics/PhysicsEngine';
 import StarCursor from './components/StarCursor';
 import Sidequests from './components/Sidequests';
-import bgImage from './assets/bg.jpg'; 
-function App() {
-  // On initialise toutes les refs, y compris pour Lore et Sidequests
-  const accueilRef = useRef(null);
-  const projetsRef = useRef(null);
-  const experiencesRef = useRef(null);
-  const loreRef = useRef(null);
-  const sidequestsRef = useRef(null);
-  const contactRef = useRef(null);
+import Terminal from './components/Terminal';
+import Achievement from './components/Achievement';
+import bgImage from './assets/bg.jpg';
 
-  const isCheatActivated = useCheatCode();
+function App() {
+  const accueilRef     = useRef(null);
+  const projetsRef     = useRef(null);
+  const experiencesRef = useRef(null);
+  const loreRef        = useRef(null);
+  const sidequestsRef  = useRef(null);
+  const contactRef     = useRef(null);
+
+  const [isPhysicsActive, setIsPhysicsActive] = useState(false);
 
   return (
-    <div 
+    <div
       className="relative min-h-screen bg-cover bg-center bg-fixed"
       style={{ backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(${bgImage})` }}
     >
+      <Navbar />
       <StarCursor />
-      
+
       <div ref={accueilRef}>
         <LandingPage />
       </div>
@@ -36,7 +40,6 @@ function App() {
         <CharacterIntro />
       </div>
 
-      {/* On ajoute bien la ref ici pour le Lore */}
       <div ref={loreRef}>
         <Lore />
       </div>
@@ -45,7 +48,6 @@ function App() {
         <Quests />
       </div>
 
-      {/* On ajoute bien la ref ici pour les Sidequests */}
       <div ref={sidequestsRef}>
         <Sidequests />
       </div>
@@ -54,7 +56,8 @@ function App() {
         <Contact />
       </div>
 
-      {/* On passe l'ensemble des 6 refs à l'Avatar */}
+      <Footer />
+
       <Avatar
         accueilRef={accueilRef}
         projetsRef={projetsRef}
@@ -64,7 +67,16 @@ function App() {
         sidequestsRef={sidequestsRef}
       />
 
-      <PhysicsEngine isActive={isCheatActivated} />
+      <Terminal onPhysics={() => setIsPhysicsActive(true)} />
+      <PhysicsEngine isActive={isPhysicsActive} />
+      <Achievement
+        accueilRef={accueilRef}
+        experiencesRef={experiencesRef}
+        loreRef={loreRef}
+        projetsRef={projetsRef}
+        sidequestsRef={sidequestsRef}
+        contactRef={contactRef}
+      />
     </div>
   );
 }
