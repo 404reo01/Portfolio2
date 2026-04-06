@@ -4,6 +4,14 @@ import { SectionHeader, GlassCard, PixelButton } from './ui';
 
 const projects = [
   {
+    title: 'Reo Le Prisme',
+    type: 'Projet Perso',
+    stack: ['Next.js', 'TypeScript', 'Tailwind v4', 'Three.js', 'Python'],
+    description: "Simulation interactive des discriminations systémiques en France. Construit un profil fictif et simule statistiquement ses chances d'obtenir un rappel à l'embauche ou une visite de logement, basé sur des coefficients issus d'études scientifiques par testing.",
+    github: 'https://github.com/404reo01/Reo_Le_Prisme',
+    live: 'https://reo-le-prisme.netlify.app/',
+  },
+  {
     title: 'Reo Bonnes Idées',
     type: 'Projet Perso',
     stack: ['React', 'IA', 'GitHub API'],
@@ -176,11 +184,11 @@ export default function Quests() {
       {/* Panneau de détails */}
       <GlassCard
         variant="dark"
-        className="mt-16 w-full max-w-2xl p-10 rounded-2xl"
+        className="mt-6 w-full max-w-2xl p-5 rounded-2xl"
       >
 
         {/* Navigation desktop + dots */}
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex justify-between items-center mb-4">
           <PixelButton variant="nav" onClick={prevProject} className="hidden md:block text-[15px] pb-1">
             ← Précédent
           </PixelButton>
@@ -205,7 +213,7 @@ export default function Quests() {
           </PixelButton>
         </div>
 
-        <p className="text-xl font-sans italic text-[#f5f5dc]/80 mb-12 leading-relaxed text-center">
+        <p className="text-base font-sans italic text-[#f5f5dc]/80 mb-5 leading-relaxed text-center">
           "{projects[index].description}"
         </p>
 
@@ -216,7 +224,7 @@ export default function Quests() {
             href={projects[index].github}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 py-4 text-center text-[13px] flex items-center justify-center gap-2"
+            className="flex-1 py-3 text-center text-[13px] flex items-center justify-center gap-2"
           >
             <span className="text-[#f5f5dc]/50">⌥</span> Code Source
           </PixelButton>
@@ -231,7 +239,7 @@ export default function Quests() {
               <motion.div
                 animate={{ boxShadow: ['0 0 10px rgba(245,245,220,0.08)', '0 0 28px rgba(245,245,220,0.22)', '0 0 10px rgba(245,245,220,0.08)'] }}
                 transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
-                className="w-full py-4 text-center font-pixel uppercase text-[13px] tracking-[0.3em]
+                className="w-full py-3 text-center font-pixel uppercase text-[13px] tracking-[0.3em]
                            bg-[#f5f5dc]/10 border border-[#f5f5dc]/35
                            text-[#f5f5dc] hover:bg-[#f5f5dc]/20 transition-colors duration-200
                            flex items-center justify-center gap-2"
