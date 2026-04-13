@@ -4,6 +4,13 @@ import { SectionHeader, GlassCard, PixelButton } from './ui';
 
 const projects = [
   {
+    title: 'Reo Le Scribe',
+    type: 'Projet Perso',
+    stack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'Mediasoup', 'PostgreSQL', 'Docker'],
+    description: "Plateforme de communication temps réel pour petites équipes (max 10 users) avec voix, vidéo et partage d'écran. Fonctionnalité phare : un bouton \"À l'affût\" qui déclenche une transcription et synthèse IA ciblée des moments clés, sans enregistrement complet.",
+    github: 'https://github.com/404reo01/Reo_le_scribe',
+  },
+  {
     title: 'Reo Le Prisme',
     type: 'Projet Perso',
     stack: ['Next.js', 'TypeScript', 'Tailwind v4', 'Three.js', 'Python'],
