@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { HudCorners } from './ui';
+import { SSH_COMMAND } from '../constants';
 
 const NAV_MAP = {
   accueil:     'Accueil',
@@ -27,9 +28,16 @@ const HELP_LINES = [
   '│  cd <section>      Naviguer vers une section  │',
   '│    accueil · competences · parcours           │',
   '│    projets · hobbies · contact                │',
+  '│  ssh               Accéder au CV interactif   │',
   '│  clear             Vider le terminal          │',
   '│  exit / q          Fermer                     │',
   '└──────────────────────────────────────────────┘',
+];
+
+const SSH_LINES_BASE = [
+  '> CV interactif accessible via SSH',
+  '─────────────────────────────────────',
+  `$ ${SSH_COMMAND}`,
 ];
 
 const WHOAMI_LINES = [
@@ -110,6 +118,12 @@ export default function Terminal({ onPhysics }) {
           'Sections : accueil · competences · parcours · projets · hobbies · contact',
         ]);
       }
+
+    } else if (lower === 'ssh' || lower === 'cv') {
+      push(SSH_LINES_BASE);
+      navigator.clipboard.writeText(SSH_COMMAND)
+        .then(() => push(['> Commande copiée dans le presse-papier ✓']))
+        .catch(() => push(['> Copiez la commande ci-dessus manuellement.']));
 
     } else if (lower === 'physics' || lower === 'run physics') {
       push(['⚠ Initialisation du moteur physique...', 'Appuyez sur Échap pour réinitialiser.']);

@@ -1,8 +1,17 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { SectionHeader, GlassCard, PixelButton } from './ui';
+import { SSH_COMMAND } from '../constants';
 
 const projects = [
+  {
+    title: 'Le CV de Reo',
+    type: 'Projet Perso',
+    stack: ['Go', 'Bubbletea', 'Wish', 'SSH', 'Docker'],
+    description: "Connectez-vous à votre terminal, tapez la commande que vous pouvez copier en bas et naviguez sur mon CV.",
+    github: 'https://github.com/404reo01/CV-Terminal',
+    ssh: SSH_COMMAND,
+  },
   {
     title: 'Reo Le Scribe',
     type: 'Projet Perso',
@@ -55,6 +64,21 @@ const VELOCITY_THRESHOLD = 300;
 export default function Quests() {
   const [index, setIndex] = useState(0);
   const [hasSwipedOnce, setHasSwipedOnce] = useState(false);
+  const [copied, setCopied] = useState(null);
+
+  useEffect(() => { setCopied(null); }, [index]);
+
+  useEffect(() => {
+    if (!copied) return;
+    const id = setTimeout(() => setCopied(null), 2000);
+    return () => clearTimeout(id);
+  }, [copied]);
+
+  function copySSH() {
+    navigator.clipboard.writeText(SSH_COMMAND)
+      .then(() => setCopied('ok'))
+      .catch(() => setCopied('err'));
+  }
 
   const nextProject = () => setIndex((prev) => (prev + 1) % projects.length);
   const prevProject = () => setIndex((prev) => (prev - 1 + projects.length) % projects.length);
@@ -235,6 +259,26 @@ export default function Quests() {
           >
             <span className="text-[#f5f5dc]/50">⌥</span> Code Source
           </PixelButton>
+
+          {projects[index].ssh && (
+            <motion.button
+              onClick={copySSH}
+              animate={{ boxShadow: copied === 'ok'
+                ? ['0 0 20px rgba(109,184,122,0.4)', '0 0 36px rgba(109,184,122,0.6)', '0 0 20px rgba(109,184,122,0.4)']
+                : copied === 'err'
+                ? ['0 0 20px rgba(220,60,60,0.4)', '0 0 36px rgba(220,60,60,0.6)', '0 0 20px rgba(220,60,60,0.4)']
+                : ['0 0 10px rgba(245,245,220,0.08)', '0 0 28px rgba(245,245,220,0.22)', '0 0 10px rgba(245,245,220,0.08)']
+              }}
+              transition={{ duration: 2.2, repeat: Infinity, ease: 'easeInOut' }}
+              className="flex-1 py-3 font-pixel uppercase text-[13px] tracking-[0.3em]
+                         bg-[#f5f5dc]/10 border border-[#f5f5dc]/35
+                         text-[#f5f5dc] hover:bg-[#f5f5dc]/20 transition-colors duration-200
+                         flex items-center justify-center gap-2"
+            >
+              <span className="text-[#f5f5dc]/60">{copied === 'ok' ? '✓' : copied === 'err' ? '✗' : '$'}</span>
+              {copied === 'ok' ? 'Copié !' : copied === 'err' ? 'Copiez manuellement' : 'Cliquez pour copier'}
+            </motion.button>
+          )}
 
           {projects[index].live && (
             <a
