@@ -12,7 +12,7 @@ export const TECH_IMAGES = [
   `https://cdn.simpleicons.org/react/${COLOR}`,
   `https://cdn.simpleicons.org/nextdotjs/${COLOR}`,
   `https://cdn.simpleicons.org/vuedotjs/${COLOR}`,
-  `https://cdn.simpleicons.org/nuxtdotjs/${COLOR}`,
+  `https://cdn.simpleicons.org/nuxt/${COLOR}`,
   `https://cdn.simpleicons.org/tailwindcss/${COLOR}`,
   `https://cdn.simpleicons.org/nodedotjs/${COLOR}`,
   `https://cdn.simpleicons.org/nestjs/${COLOR}`,
