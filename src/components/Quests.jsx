@@ -78,6 +78,11 @@ export default function Quests() {
     navigator.clipboard.writeText(SSH_COMMAND)
       .then(() => setCopied('ok'))
       .catch(() => setCopied('err'));
+
+    const ua = navigator.userAgent;
+    if (ua.includes('Mac') && !ua.includes('iPhone') && !ua.includes('iPad')) {
+      window.location.href = `ssh://${SSH_COMMAND.replace(/^ssh\s+/, '')}`;
+    }
   }
 
   const nextProject = () => setIndex((prev) => (prev + 1) % projects.length);
