@@ -20,7 +20,7 @@ const EXPERIENCES = [
     role: 'Product Engineer · Full Stack & Cloud',
     stack: ['Next.js', 'Tailwind', 'OVHcloud', 'GitLab CI', 'AI Endpoints'],
     description:
-      "Arrivé en stage, resté en alternance sur le même produit : un SaaS sur lequel je travaille à temps plein, de la conception au code. Revue de code, mise en production sur OVHcloud avec des pipelines CI/CD GitLab, et intégration de modèles d'IA via OVHcloud AI Endpoints. J'ai aussi participé au développement du site vitrine de l'entreprise en Next.js et Tailwind.",
+      "Stage puis alternance. Développement d'un SaaS, de la conception au code. Revue de code, mise en production sur OVHcloud avec des pipelines CI/CD GitLab, et intégration de modèles d'IA. J'ai aussi participé au développement du site vitrine de l'entreprise en Next.js et Tailwind.",
   },
   {
     id: 'epetitpas',

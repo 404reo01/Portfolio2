@@ -48,8 +48,8 @@ const CHAPTERS = [
   {
     roman: 'V',
     year: '2026 - 2028',
-    title: 'MSc SUPINFO',
-    subtitle: 'Développement Web, Mobile & Cloud',
+    title: 'MSc Développement & Cloud',
+    subtitle: 'SUPINFO',
     description:
       "Master of Science en alternance chez Ransau Système. Architecture logicielle, développement web et mobile, déploiement et services cloud.",
     tags: ['Cloud', 'Mobile', 'CI/CD', 'IA'],
