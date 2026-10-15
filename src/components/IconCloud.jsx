@@ -27,6 +27,8 @@ export const TECH_IMAGES = [
   `https://cdn.simpleicons.org/pandas/${COLOR}`,
   `https://cdn.simpleicons.org/scikitlearn/${COLOR}`,
   `https://cdn.simpleicons.org/docker/${COLOR}`,
+  `https://cdn.simpleicons.org/ovh/${COLOR}`,
+  `https://cdn.simpleicons.org/gitlab/${COLOR}`,
 ];
 
 /* ── Composant ───────────────────────────────────────────── */

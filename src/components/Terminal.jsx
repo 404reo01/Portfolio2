@@ -42,10 +42,10 @@ const SSH_LINES_BASE = [
 
 const WHOAMI_LINES = [
   '> Rayan EL OUAZZANI',
-  '> Développeur Full Stack — BUT Informatique 3e année',
-  '> Stack : React · Next.js · Node.js · NestJS · Supabase',
-  '> Président BDE · En recherche d\'alternance',
-  '> Status : ● Disponible',
+  '> Product Engineer — Full Stack & Cloud',
+  '> MSc SUPINFO · Alternant chez Ransau Système',
+  '> Stack : React · Next.js · Node.js · NestJS · OVHcloud · GitLab CI',
+  '> Status : ● En ligne',
 ];
 
 export default function Terminal({ onPhysics }) {

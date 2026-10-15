@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HudCorners, PulsingDot } from './ui';
 import IconCloud from './IconCloud';
 
-const TYPEWRITER_TEXT = 'Développeur Full Stack · BUT Informatique 3e année';
+const TYPEWRITER_TEXT = 'Product Engineer · Full Stack & Cloud';
 
 // Générés une seule fois au module load pour éviter les re-renders
 const BG_STARS = Array.from({ length: 60 }, (_, i) => ({
@@ -119,7 +119,7 @@ export default function LandingPage() {
           <span className="cursor-blink ml-[2px] inline-block w-[2px] h-[1.1em] bg-[#f5f5dc]/70 align-middle" />
         </motion.div>
 
-        {/* Bloc Alternance BUT 3 */}
+        {/* Bloc Alternance */}
         <AnimatePresence>
           {showBadge && (
             <motion.div
@@ -133,18 +133,18 @@ export default function LandingPage() {
               <div className="flex items-center gap-2">
                 <PulsingDot className="bg-[#f5f5dc]" />
                 <span className="text-[#f5f5dc] text-[10px] md:text-xs tracking-[0.22em] uppercase">
-                  Alternance Open
+                  Alternance · Ransau Système
                 </span>
               </div>
 
               {/* Séparateur vertical */}
               <span className="hidden sm:block w-px h-4 bg-[#f5f5dc]/20" />
 
-              {/* Info BUT 3 */}
+              {/* Info MSc */}
               <div className="flex items-center gap-2">
                 <span className="text-[#f5f5dc]/40 text-[10px] select-none">◈</span>
                 <span className="text-[#f5f5dc]/70 text-[10px] md:text-xs tracking-[0.18em] uppercase">
-                  BUT Informatique · 3e année
+                  MSc SUPINFO · Web, Mobile & Cloud
                 </span>
               </div>
             </motion.div>

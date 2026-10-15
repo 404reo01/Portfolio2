@@ -7,7 +7,7 @@ const sideQuests = [
     id: 'tech',
     title: 'Tech',
     symbol: '⌘',
-    content: "En plus du développement, j'aime tout ce qui se rapporte à la tech. J'ai participé à des évenements tels que la nuit de l'info et fais plusieurs salons tech comme Vivatech.",
+    content: "En plus du développement, j'aime tout ce qui se rapporte à la tech. J'ai participé à des événements tels que la nuit de l'info et fait plusieurs salons tech comme Vivatech.",
     spotifyUrl: 'https://open.spotify.com/embed/track/1fLEbwf9nT9yY5IjNtLYgy?utm_source=generator',
   },
   {
@@ -21,7 +21,7 @@ const sideQuests = [
     id: 'entrepreneur',
     title: 'Entrepreneuriat',
     symbol: '◆',
-    content: "Je me suis toujours interessé à l'entrepreneuriat, les histoires de succès me motivent.",
+    content: "Je me suis toujours intéressé à l'entrepreneuriat, les histoires de succès me motivent.",
     spotifyUrl: 'https://open.spotify.com/embed/track/3dgQqOiQ9fCKVhNOedd2lf?utm_source=generator',
   },
   {

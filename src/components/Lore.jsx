@@ -43,13 +43,24 @@ const CHAPTERS = [
     description:
       "Spécialisation full stack. Architecture d'applications, notions en cloud computing, et immersion dans les technologies modernes du web.",
     tags: ['React', 'Node.js', 'Cloud', 'IA'],
+    active: false,
+  },
+  {
+    roman: 'V',
+    year: '2026 - 2028',
+    title: 'MSc SUPINFO',
+    subtitle: 'Développement Web, Mobile & Cloud',
+    description:
+      "Master of Science en alternance chez Ransau Système. Architecture logicielle, développement web et mobile, déploiement et services cloud.",
+    tags: ['Cloud', 'Mobile', 'CI/CD', 'IA'],
     active: true,
+    wide: true,
   },
 ];
 
 /* ── Carte chapitre ──────────────────────────────────────── */
 
-function ChapterCard({ roman, year, title, subtitle, description, tags, active, delay }) {
+function ChapterCard({ roman, year, title, subtitle, description, tags, active, wide, delay }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
@@ -60,6 +71,7 @@ function ChapterCard({ roman, year, title, subtitle, description, tags, active, 
       className={`relative overflow-hidden group cursor-default
                   border transition-all duration-300
                   min-h-[260px] md:min-h-[310px]
+                  ${wide ? 'md:col-span-2' : ''}
                   ${active
                     ? 'border-[#f5f5dc]/25 bg-black/58'
                     : 'border-[#f5f5dc]/10 bg-black/42 opacity-80 hover:opacity-100'

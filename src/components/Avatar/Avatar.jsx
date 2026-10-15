@@ -9,7 +9,7 @@ const DIALOGUES = {
   Accueil:     "Bienvenue dans mon portfolio ! Je suis Rayan, développeur full-stack passionné.",
   Experiences: "Voici mes stats et mon parcours. Je suis un développeur plutôt équilibré.",
   Lore:        "Mon journal de bord... On y voit tout mon parcours.",
-  Projets:     "Voici mes quêtes principales, mes projets les plus passionants.",
+  Projets:     "Voici mes quêtes principales, mes projets les plus passionnants.",
   Sidequests:  "Mes quêtes annexes. Karaté, Mangas... c'est ce qui me booste.",
   Contact:     "N'hésite pas à me contacter pour collaborer !",
 };

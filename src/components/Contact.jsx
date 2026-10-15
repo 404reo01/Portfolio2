@@ -57,14 +57,14 @@ export default function Contact() {
             <div className="flex items-center justify-center gap-3 border border-[#f5f5dc]/15 bg-[#f5f5dc]/5 px-6 py-3">
               <PulsingDot />
               <span className="text-sm tracking-[0.25em] uppercase text-[#f5f5dc]/85">
-                Disponible en alternance
+                Ouvert aux échanges
               </span>
             </div>
 
             {/* Phrase accroche */}
             <p className="text-center text-base md:text-lg font-sans text-[#f5f5dc]/70 leading-relaxed">
-              Ouvert à toute opportunité.
-              N'hésitez pas à me contacter directement.
+              Un projet, une question tech, une opportunité ?
+              Écrivez-moi directement.
             </p>
 
             {/* CTAs */}

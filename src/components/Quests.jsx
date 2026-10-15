@@ -13,6 +13,13 @@ const projects = [
     ssh: SSH_COMMAND,
   },
   {
+    title: 'Mappa',
+    type: 'Projet Perso',
+    stack: ['TypeScript', 'Remotion', 'Claude Code', 'ElevenLabs', 'FFmpeg'],
+    description: "Une commande Claude Code qui transforme un mémo vocal en vidéo verticale animée, prête pour TikTok, Reels ou LinkedIn. Transcription, coupe des hésitations, puis l'IA réalise la vidéo : découpage en plans, illustrations, sous-titres et musique. Un relecteur IA indépendant contrôle le résultat, et l'utilisateur valide à chaque étape.",
+    github: 'https://github.com/404reo01/Video-generator-command',
+  },
+  {
     title: 'Reo Le Scribe',
     type: 'Projet Perso',
     stack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'Mediasoup', 'PostgreSQL', 'Docker'],
@@ -48,13 +55,6 @@ const projects = [
     stack: ['React Native', 'API Spotify'],
     description: "Application mobile de recommandation musicale.",
     github: 'https://github.com/YannMKD/sae-but3-eco-mobile',
-  },
-  {
-    title: 'Bot Stage Scraper',
-    type: 'Projet Perso',
-    stack: ['Python', 'Scraping', 'CSV'],
-    description: "Outil de scraping sur Welcome to the Jungle pour filtrage intelligent d'offres CSV.",
-    github: 'https://github.com/404reo01/bot-recherche-stage',
   },
 ];
 

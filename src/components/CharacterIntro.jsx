@@ -6,25 +6,25 @@ import { HudCorners, SectionHeader, SectionDivider, Tag, PulsingDot } from './ui
 /* ── Données ─────────────────────────────────────────────── */
 
 const IDENTITY = [
-  { key: 'Classe', value: 'Développeur Full Stack' },
-  { key: 'Rang',   value: 'BUT Informatique · 3e année' },
-  { key: 'Guilde', value: 'Président BDE' },
+  { key: 'Classe', value: 'Product Engineer' },
+  { key: 'Rang',   value: 'MSc SUPINFO · Web, Mobile & Cloud' },
+  { key: 'Guilde', value: 'Ransau Système' },
 ];
 
 const EXPERIENCES = [
   {
     id: 'ransau',
-    status: 'EN COURS',
+    status: 'Stage → Alternance · 2026-2028',
     pulse: true,
     company: 'Ransau Système',
-    role: 'Développeur IA Full Stack',
-    stack: ['Next.js', 'Tailwind', 'Cloud'],
+    role: 'Product Engineer · Full Stack & Cloud',
+    stack: ['Next.js', 'Tailwind', 'OVHcloud', 'GitLab CI', 'AI Endpoints'],
     description:
-      "Développement du site vitrine en Next.js et Tailwind. Conception complète d'un SaaS — de la charte graphique jusqu'au code et à l'infrastructure cloud.",
+      "Arrivé en stage, resté en alternance sur le même produit : un SaaS sur lequel je travaille à temps plein, de la conception au code. Revue de code, mise en production sur OVHcloud avec des pipelines CI/CD GitLab, et intégration de modèles d'IA via OVHcloud AI Endpoints. J'ai aussi participé au développement du site vitrine de l'entreprise en Next.js et Tailwind.",
   },
   {
     id: 'epetitpas',
-    status: '2025 · 2 mois',
+    status: 'Stage · 2025 · 2 mois',
     pulse: false,
     company: 'e-petitpas',
     role: 'Développeur Full Stack',
@@ -38,6 +38,7 @@ const SKILL_GROUPS = [
   { label: 'Frontend',   tags: ['React', 'React Native', 'Vue.js', 'Next.js', 'Nuxt.js', 'Tailwind'] },
   { label: 'Backend',    tags: ['Node.js', 'NestJS', 'Fastify', 'Express', 'PHP', 'Python', 'WebSocket'] },
   { label: 'BDD & Data', tags: ['Supabase', 'PostgreSQL', 'MySQL', 'Prisma', 'Pandas', 'Scikit-learn'] },
+  { label: 'Cloud & DevOps', tags: ['OVHcloud', 'GitLab CI', 'Docker', 'AI Endpoints'] },
 ];
 
 /* ── Carte XP ────────────────────────────────────────────── */
@@ -167,7 +168,7 @@ export default function CharacterIntro() {
 
           <div>
             <SectionDivider label="Compétences" delay={0.3} />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {SKILL_GROUPS.map((g, i) => (
                 <SkillCard key={g.label} {...g} delay={0.35 + i * 0.07} />
               ))}
