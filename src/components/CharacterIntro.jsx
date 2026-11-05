@@ -6,7 +6,7 @@ import { HudCorners, SectionHeader, SectionDivider, Tag, PulsingDot } from './ui
 /* ── Données ─────────────────────────────────────────────── */
 
 const IDENTITY = [
-  { key: 'Classe', value: 'Product Engineer' },
+  { key: 'Classe', value: 'Software Engineer' },
   { key: 'Rang',   value: 'MSc SUPINFO · Web, Mobile & Cloud' },
   { key: 'Guilde', value: 'Ransau Système' },
 ];
@@ -17,10 +17,10 @@ const EXPERIENCES = [
     status: 'Stage → Alternance · 2026-2028',
     pulse: true,
     company: 'Ransau Système',
-    role: 'Product Engineer · Full Stack & Cloud',
-    stack: ['Next.js', 'Tailwind', 'OVHcloud', 'GitLab CI', 'AI Endpoints'],
+    role: 'Software Engineer · Full Stack, Cloud & IA',
+    stack: ['Next.js', 'NestJS', 'PostgreSQL', 'Kubernetes', 'Helm', 'GitLab CI'],
     description:
-      "Stage puis alternance. Développement d'un SaaS, de la conception au code. Revue de code, mise en production sur OVHcloud avec des pipelines CI/CD GitLab, et intégration de modèles d'IA. J'ai aussi participé au développement du site vitrine de l'entreprise en Next.js et Tailwind.",
+      "Stage puis alternance. Développement full stack d'un SaaS. Conception et gestion de l'infrastructure cloud : Kubernetes et Helm sur OVHcloud, déploiement des serveurs de production, pipelines CI/CD GitLab. Intégration de fonctionnalités IA, et contribution aux missions clients : intégration IA, automatisation et développement sur mesure.",
   },
   {
     id: 'epetitpas',
@@ -34,11 +34,13 @@ const EXPERIENCES = [
   },
 ];
 
+// `wide` : la carte occupe toute la largeur de la grille (2 colonnes en md+).
 const SKILL_GROUPS = [
-  { label: 'Frontend',   tags: ['React', 'React Native', 'Vue.js', 'Next.js', 'Nuxt.js', 'Tailwind'] },
-  { label: 'Backend',    tags: ['Node.js', 'NestJS', 'Fastify', 'Express', 'PHP', 'Python', 'WebSocket'] },
-  { label: 'BDD & Data', tags: ['Supabase', 'PostgreSQL', 'MySQL', 'Prisma', 'Pandas', 'Scikit-learn'] },
-  { label: 'Cloud & DevOps', tags: ['OVHcloud', 'GitLab CI', 'Docker', 'AI Endpoints'] },
+  { label: 'IA',             tags: ['Intégration LLM', 'IA agentique', 'Claude Code', 'AI Endpoints'], wide: true },
+  { label: 'Frontend',       tags: ['React', 'Next.js', 'React Native', 'Vue.js', 'Nuxt.js', 'Tailwind'] },
+  { label: 'Backend',        tags: ['Node.js', 'NestJS', 'Fastify', 'Express', 'Python', 'WebSocket', 'PHP'] },
+  { label: 'BDD & Data',     tags: ['PostgreSQL', 'Redis', 'Supabase', 'Prisma', 'MySQL', 'Pandas'] },
+  { label: 'Cloud & DevOps', tags: ['Kubernetes', 'Helm', 'Docker', 'GitLab CI', 'OVHcloud'] },
 ];
 
 /* ── Carte XP ────────────────────────────────────────────── */
@@ -88,14 +90,14 @@ function XPCard({ status, pulse, company, role, stack, description, delay }) {
 
 /* ── Carte compétences ───────────────────────────────────── */
 
-function SkillCard({ label, tags, delay }) {
+function SkillCard({ label, tags, wide = false, delay }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 10 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay, duration: 0.35 }}
-      className="border border-[#f5f5dc]/15 bg-black/45 p-5 flex flex-col gap-4"
+      className={`border border-[#f5f5dc]/15 bg-black/45 p-5 flex flex-col gap-4 ${wide ? 'md:col-span-2' : ''}`}
     >
       <span className="text-xs tracking-[0.35em] uppercase text-[#f5f5dc]/45">{label}</span>
       <div className="flex flex-wrap gap-2">

@@ -42,9 +42,9 @@ const SSH_LINES_BASE = [
 
 const WHOAMI_LINES = [
   '> Rayan EL OUAZZANI',
-  '> Product Engineer — Full Stack & Cloud',
+  '> Software Engineer — Full Stack, Cloud & IA',
   '> MSc SUPINFO · Alternant chez Ransau Système',
-  '> Stack : React · Next.js · Node.js · NestJS · OVHcloud · GitLab CI',
+  '> Stack : React · Next.js · NestJS · Kubernetes · OVHcloud · LLM',
   '> Status : ● En ligne',
 ];
 

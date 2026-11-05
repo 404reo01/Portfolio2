@@ -17,6 +17,13 @@ const LINKS = [
     href: 'https://www.linkedin.com/in/rayan-el-ouazzani-529a86214/',
     hint: 'Voir le profil complet',
   },
+  {
+    label: 'GitHub',
+    symbol: '</>',
+    value: 'github.com/404reo01',
+    href: 'https://github.com/404reo01',
+    hint: 'Voir mes projets',
+  },
 ];
 
 export default function Contact() {

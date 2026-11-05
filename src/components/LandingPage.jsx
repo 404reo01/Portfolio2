@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { HudCorners, PulsingDot } from './ui';
 import IconCloud from './IconCloud';
 
-const TYPEWRITER_TEXT = 'Product Engineer · Full Stack & Cloud';
+const TYPEWRITER_TEXT = 'Software Engineer · Full Stack, Cloud & IA';
 
 // Générés une seule fois au module load pour éviter les re-renders
 const BG_STARS = Array.from({ length: 60 }, (_, i) => ({

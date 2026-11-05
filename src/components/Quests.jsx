@@ -5,26 +5,11 @@ import { SSH_COMMAND } from '../constants';
 
 const projects = [
   {
-    title: 'Le CV de Reo',
-    type: 'Projet Perso',
-    stack: ['Go', 'Bubbletea', 'Wish', 'SSH', 'Docker'],
-    description: "Connectez-vous à votre terminal, tapez la commande que vous pouvez copier en bas et naviguez sur mon CV.",
-    github: 'https://github.com/404reo01/CV-Terminal',
-    ssh: SSH_COMMAND,
-  },
-  {
     title: 'Mappa',
     type: 'Projet Perso',
     stack: ['TypeScript', 'Remotion', 'Claude Code', 'ElevenLabs', 'FFmpeg'],
     description: "Une commande Claude Code qui transforme un mémo vocal en vidéo verticale animée, prête pour TikTok, Reels ou LinkedIn. Transcription, coupe des hésitations, puis l'IA réalise la vidéo : découpage en plans, illustrations, sous-titres et musique. Un relecteur IA indépendant contrôle le résultat, et l'utilisateur valide à chaque étape.",
     github: 'https://github.com/404reo01/Video-generator-command',
-  },
-  {
-    title: 'Reo Le Scribe',
-    type: 'Projet Perso',
-    stack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'Mediasoup', 'PostgreSQL', 'Docker'],
-    description: "Plateforme de communication temps réel pour petites équipes (max 10 users) avec voix, vidéo et partage d'écran. Fonctionnalité phare : un bouton \"À l'affût\" qui déclenche une transcription et synthèse IA ciblée des moments clés, sans enregistrement complet.",
-    github: 'https://github.com/404reo01/Reo_le_scribe',
   },
   {
     title: 'Reo Le Prisme',
@@ -35,19 +20,19 @@ const projects = [
     live: 'https://reo-le-prisme.netlify.app/',
   },
   {
-    title: 'Reo Bonnes Idées',
+    title: 'Reo Le Scribe',
     type: 'Projet Perso',
-    stack: ['React', 'IA', 'GitHub API'],
-    description: "Chatbot d'idées de projets avec analyse GitHub intégrée. L'IA au service de la créativité.",
-    github: 'https://github.com/404reo01/reo-bonnes-idees',
-    live: 'https://reobonneidees.netlify.app/',
+    stack: ['React', 'TypeScript', 'Node.js', 'Socket.io', 'Mediasoup', 'PostgreSQL', 'Docker'],
+    description: "Plateforme de communication temps réel pour petites équipes (max 10 users) avec voix, vidéo et partage d'écran. Fonctionnalité phare : un bouton \"À l'affût\" qui déclenche une transcription et synthèse IA ciblée des moments clés, sans enregistrement complet.",
+    github: 'https://github.com/404reo01/Reo_le_scribe',
   },
   {
-    title: 'Live Cursor / Chat',
+    title: 'Le CV de Reo',
     type: 'Projet Perso',
-    stack: ['WebSocket', 'Node.js', 'React'],
-    description: "Messagerie instantanée avec WebSocket et curseurs partagés. Projet qui a pour but d'explorer et apprendre le web en temps réel.",
-    github: 'https://github.com/404reo01/Live-cursor_chatBox',
+    stack: ['Go', 'Bubbletea', 'Wish', 'SSH', 'Docker'],
+    description: "Connectez-vous à votre terminal, tapez la commande que vous pouvez copier en bas et naviguez sur mon CV.",
+    github: 'https://github.com/404reo01/CV-Terminal',
+    ssh: SSH_COMMAND,
   },
   {
     title: 'TrackStar App',
