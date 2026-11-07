@@ -5,10 +5,13 @@ import { HudCorners } from './index';
 /**
  * Bulle de dialogue RPG — typewriter effect
  *
- * @param {string} text     - Texte à afficher lettre par lettre
- * @param {'up'|'down'} tail - Direction de la queue [défaut: 'down']
+ * @param {string} text            - Texte à afficher lettre par lettre
+ * @param {'up'|'down'} tail        - Direction de la queue [défaut: 'down']
+ * @param {'left'|'right'} tailSide - Côté de la queue, vers le perso [défaut: 'right']
  */
-export default function DialogBox({ text, tail = 'down' }) {
+export default function DialogBox({ text, tail = 'down', tailSide = 'right' }) {
+  const tailPosition = tailSide === 'left' ? 'left-5' : 'right-5';
+
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(false);
 
@@ -64,17 +67,17 @@ export default function DialogBox({ text, tail = 'down' }) {
 
       {/* Queue vers le bas (pointe vers le perso en-dessous) */}
       {tail === 'down' && (
-        <div className="absolute -bottom-[9px] right-5 w-0 h-0
+        <div className={`absolute -bottom-[9px] ${tailPosition} w-0 h-0
                         border-l-[9px] border-l-transparent
                         border-r-[9px] border-r-transparent
-                        border-t-[9px] border-t-[#f5f5dc]/30" />
+                        border-t-[9px] border-t-[#f5f5dc]/30`} />
       )}
       {/* Queue vers le haut (pointe vers le perso au-dessus) */}
       {tail === 'up' && (
-        <div className="absolute -top-[9px] right-5 w-0 h-0
+        <div className={`absolute -top-[9px] ${tailPosition} w-0 h-0
                         border-l-[9px] border-l-transparent
                         border-r-[9px] border-r-transparent
-                        border-b-[9px] border-b-[#f5f5dc]/30" />
+                        border-b-[9px] border-b-[#f5f5dc]/30`} />
       )}
     </motion.div>
   );

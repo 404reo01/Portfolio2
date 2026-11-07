@@ -1,30 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SectionHeader, HudCorners, PulsingDot, PixelButton } from './ui';
-
-const LINKS = [
-  {
-    label: 'Email',
-    symbol: '✉',
-    value: 'rayan.el.ouazzani01@gmail.com',
-    href: 'mailto:rayan.el.ouazzani01@gmail.com',
-    hint: 'Envoyer un message direct',
-  },
-  {
-    label: 'LinkedIn',
-    symbol: 'in',
-    value: 'linkedin.com/in/rayan-el-ouazzani',
-    href: 'https://www.linkedin.com/in/rayan-el-ouazzani-529a86214/',
-    hint: 'Voir le profil complet',
-  },
-  {
-    label: 'GitHub',
-    symbol: '</>',
-    value: 'github.com/404reo01',
-    href: 'https://github.com/404reo01',
-    hint: 'Voir mes projets',
-  },
-];
+import { SectionHeader, HudCorners, PulsingDot, LinkCard } from './ui';
+import { CONTACT_LINKS } from '../constants';
 
 export default function Contact() {
   return (
@@ -76,47 +53,8 @@ export default function Contact() {
 
             {/* CTAs */}
             <div className="flex flex-col gap-4">
-              {LINKS.map((link, i) => (
-                <motion.a
-                  key={link.label}
-                  href={link.href}
-                  target={link.href.startsWith('http') ? '_blank' : undefined}
-                  rel={link.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  initial={{ opacity: 0, x: -12 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: 0.15 + i * 0.1, duration: 0.4 }}
-                  className="group relative flex items-center gap-5 border border-[#f5f5dc]/15
-                             bg-white/[0.03] hover:bg-white/[0.07] hover:border-[#f5f5dc]/35
-                             px-6 py-5 transition-all duration-300 overflow-hidden"
-                >
-                  {/* Hover fill */}
-                  <div className="absolute inset-0 bg-[#f5f5dc]/[0.04] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-500" />
-
-                  {/* Symbole */}
-                  <span className="relative z-10 shrink-0 w-10 h-10 flex items-center justify-center
-                                   border border-[#f5f5dc]/20 text-[#f5f5dc]/60 text-base
-                                   group-hover:border-[#f5f5dc]/50 group-hover:text-[#f5f5dc]
-                                   transition-all duration-300">
-                    {link.symbol}
-                  </span>
-
-                  {/* Texte */}
-                  <div className="relative z-10 flex flex-col gap-0.5 min-w-0">
-                    <span className="text-[10px] tracking-[0.3em] uppercase text-[#f5f5dc]/40">
-                      {link.label}
-                    </span>
-                    <span className="text-sm md:text-base text-[#f5f5dc]/80 group-hover:text-[#f5f5dc] transition-colors duration-300 break-all">
-                      {link.value}
-                    </span>
-                  </div>
-
-                  {/* Flèche */}
-                  <span className="relative z-10 ml-auto text-[#f5f5dc]/20 group-hover:text-[#f5f5dc]/60
-                                   group-hover:translate-x-1 transition-all duration-300 shrink-0">
-                    →
-                  </span>
-                </motion.a>
+              {CONTACT_LINKS.map((link, i) => (
+                <LinkCard key={link.label} {...link} delay={0.15 + i * 0.1} />
               ))}
             </div>
 

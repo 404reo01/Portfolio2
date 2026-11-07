@@ -1,0 +1,12 @@
+BEGIN:VCARD
+VERSION:3.0
+N:El Ouazzani;Rayan;;;
+FN:Rayan El Ouazzani
+TITLE:DevOps & Software Engineer
+EMAIL;TYPE=INTERNET:rayan.el.ouazzani01@gmail.com
+URL:https://portfolio-rayan-elouazzani.netlify.app/
+item1.URL:https://www.linkedin.com/in/rayan-el-ouazzani-529a86214/
+item1.X-ABLabel:LinkedIn
+item2.URL:https://github.com/404reo01
+item2.X-ABLabel:GitHub
+END:VCARD
